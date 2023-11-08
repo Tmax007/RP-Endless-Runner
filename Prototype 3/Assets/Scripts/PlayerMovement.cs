@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    private Rigidbody2D rb;
-    
+    Rigidbody2D rb;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -16,26 +16,32 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Moving vertically
         if (Input.GetKey("up")) {
 
-            rb.AddForce(Vector2.up * speed, ForceMode2D.Impulse);
+            transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+
             Debug.Log("moving up");
         }
         else if (Input.GetKey("down")){
 
-            rb.AddForce(Vector2.down * speed, ForceMode2D.Impulse);
+            transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
+
             Debug.Log("moving down");
         }
-        else if (Input.GetKey("right")) {
 
-            rb.AddForce(Vector2.right * speed, ForceMode2D.Impulse);
+        //Moving horizontally
+        if (Input.GetKey("right")) {
+
+            transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+   
             Debug.Log("moving right");
         }
         else if (Input.GetKey("left")) {
 
-            rb.AddForce(Vector2.left * speed, ForceMode2D.Impulse);
+            transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+
             Debug.Log("moving left");
         }
-        
     }
 }
