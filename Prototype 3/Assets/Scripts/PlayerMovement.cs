@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    public GameObject bullet;
     Rigidbody2D rb;
    
     // Start is called before the first frame update
@@ -42,6 +43,13 @@ public class PlayerMovement : MonoBehaviour
             transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
 
             Debug.Log("moving left");
+        }
+
+
+        //Handles shooting
+        if (Input.GetKey(KeyCode.Z)) {
+
+            Debug.Log("Shooting");
         }
     }
 }
