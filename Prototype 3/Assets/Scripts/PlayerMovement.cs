@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed;
-    public GameObject bullet;
+    //Player values
     Rigidbody2D rb;
+    public float speed;
+
+    //Bullet values
+    public GameObject bullet;
+    public float bulletspeed;
+    
    
     // Start is called before the first frame update
     void Start()
@@ -47,8 +52,10 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Handles shooting
-        if (Input.GetKey(KeyCode.Z)) {
+        if (Input.GetKeyDown(KeyCode.Z)) {
 
+            Instantiate(bullet, transform.position, Quaternion.identity);
+            bullet.transform.position += new Vector3(0, bulletspeed * Time.deltaTime, 0);
             Debug.Log("Shooting");
         }
     }

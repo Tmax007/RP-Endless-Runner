@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   bullet: {fileID: 8940351128140450180, guid: c2e701411a682904b83cb5d908d08601, type: 3}
+  bulletspeed: 2
 --- !u!212 &346342322
 SpriteRenderer:
   m_ObjectHideFlags: 0
