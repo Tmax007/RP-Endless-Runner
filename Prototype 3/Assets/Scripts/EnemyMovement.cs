@@ -28,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
 
         player = GameObject.Find("Player");
         playerLink = player.GetComponent<PlayerMovement>();
+
     }
 
     // Update is called once per frame
