@@ -50,8 +50,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
             playerLink.healthRegainNum++;
-
-            getScore.scoreNum += 50;
+            getScore.scoreNum += 10;
         }
 
         healthDisplay.text = health.ToString();

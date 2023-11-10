@@ -636,7 +636,7 @@ MonoBehaviour:
   bullet: {fileID: 8940351128140450180, guid: c2e701411a682904b83cb5d908d08601, type: 3}
   health: 3
   invincibilityTime: 1.5
-  healthRegainThreshold: 6
+  healthRegainThreshold: 100
   healthRegainNum: 0
 --- !u!212 &346342322
 SpriteRenderer:
@@ -2622,7 +2622,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 230783534}
   scoreNum: 0
-  getEnemy: {fileID: 7998514794303904299, guid: 349fecf4c0639904084770c01b0b53af, type: 3}
 --- !u!1 &1048304594
 GameObject:
   m_ObjectHideFlags: 0

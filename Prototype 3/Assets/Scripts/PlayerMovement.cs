@@ -26,12 +26,20 @@ public class PlayerMovement : MonoBehaviour
     public int healthRegainNum = 0;
 
     TextMeshProUGUI healthDisplay;
-   
+
+    //Get reference to Score UI
+    GameObject scoUI;
+    ScoreUI getScore;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         healthDisplay = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+
+        //Reference to Score UI
+        scoUI = GameObject.Find("Score UI");
+        getScore = scoUI.GetComponent<ScoreUI>();
     }
 
     // Update is called once per frame
@@ -82,11 +90,15 @@ public class PlayerMovement : MonoBehaviour
         //Displays health
         healthDisplay.text = health.ToString();
 
+        healthRegainNum = getScore.scoreNum;
+
         //Regains health if threshold is met
         if(healthRegainNum == healthRegainThreshold)
         {
             health++;
             healthRegainNum = 0;
+            healthRegainThreshold += 50;
+            Debug.Log("Threshold: " + healthRegainThreshold);
         }
     }
 
