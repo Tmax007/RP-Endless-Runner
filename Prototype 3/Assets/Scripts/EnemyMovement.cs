@@ -20,6 +20,10 @@ public class EnemyMovement : MonoBehaviour
     GameObject player;
     PlayerMovement playerLink;
 
+    //Reference for score UI
+    GameObject scoUI;
+    ScoreUI getScore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,10 @@ public class EnemyMovement : MonoBehaviour
 
         player = GameObject.Find("Player");
         playerLink = player.GetComponent<PlayerMovement>();
+
+        //Gets reference for the score UI
+        scoUI = GameObject.Find("Score UI");
+        getScore = scoUI.GetComponent<ScoreUI>();
 
     }
 
@@ -42,6 +50,8 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
             playerLink.healthRegainNum++;
+
+            getScore.scoreNum += 50;
         }
 
         healthDisplay.text = health.ToString();
@@ -65,6 +75,7 @@ public class EnemyMovement : MonoBehaviour
             BulletMove BulletStats = collision.GetComponent<BulletMove>();
             health = health - BulletStats.bulletDamage;
             Debug.Log(health);
+
         }
     }
 
