@@ -3,6 +3,7 @@ HOW TO PLAY
 
 1) Use arrow keys to move up, down, left and right
 2) Press Z to shoot 
+3) Press Space to reset
 
 
 WHAT TO DO
@@ -20,8 +21,7 @@ BUT HOW DO I GET MORE LIVES?
 To avoid getting hit, remember that the enemies 
 moving up are faster than the enemies moving down
 
-But you can get more lives by shooting down enemies 
-moving up and score points
+But you can get more lives by shooting down enemies and score points
 Every 50 points you gain a new life, so keep shooting!
 
 
