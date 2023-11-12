@@ -19,3 +19,5 @@
 [//]: # (But! You can get more lives by shooting down enemies) 
 [//]: # (moving up and score points)
 [//]: # (Every 50 points you gain a new life, so keep shooting!)
+
+[//]: # (GOOD LUCK!)
