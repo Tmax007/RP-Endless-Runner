@@ -636,7 +636,7 @@ MonoBehaviour:
   bullet: {fileID: 8940351128140450180, guid: c2e701411a682904b83cb5d908d08601, type: 3}
   health: 3
   invincibilityTime: 1.5
-  healthRegainThreshold: 100
+  healthRegainThreshold: 50
   healthRegainNum: 0
 --- !u!212 &346342322
 SpriteRenderer:
