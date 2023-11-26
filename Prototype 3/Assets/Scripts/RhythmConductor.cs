@@ -27,6 +27,12 @@ public class RhythmConductor : MonoBehaviour
     {
         //Load the AudioSource attached to the Conductor GameObject
         musicSource = GetComponent<AudioSource>();
+        musicSource = GetComponent<AudioSource>();
+        if (musicSource == null)
+        {
+            Debug.LogError("No AudioSource found on the GameObject.");
+            // Handle the error, maybe disable the script or provide a default AudioSource.
+        }
 
         //Calculate the number of seconds in each beat
         secPerBeat = 60f / songBpm;
