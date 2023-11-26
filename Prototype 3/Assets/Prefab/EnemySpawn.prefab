@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec28e876a31d814dbc340901578e556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1271398529791760600, guid: 349fecf4c0639904084770c01b0b53af, type: 3}
+  enemyPrefab: {fileID: 1271398529791760600, guid: 349fecf4c0639904084770c01b0b53af, type: 3}
+  beatsPerSpawn: 1
+  beatThreshold: 0.1
 --- !u!58 &6019808780763207400
 CircleCollider2D:
   m_ObjectHideFlags: 0
