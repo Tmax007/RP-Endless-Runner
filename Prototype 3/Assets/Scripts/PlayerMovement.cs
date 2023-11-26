@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        /*
         //Moving vertically
         if (Input.GetKey("up")) {
 
@@ -58,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
             //Debug.Log("moving down");
         }
+        */
 
         //Moving horizontally
         if (Input.GetKey("right")) {
