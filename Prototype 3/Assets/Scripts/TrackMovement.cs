@@ -7,12 +7,6 @@ public class TrackMovement : MonoBehaviour
 
     public float movSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

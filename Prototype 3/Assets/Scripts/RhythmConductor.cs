@@ -23,10 +23,14 @@ public class RhythmConductor : MonoBehaviour
     //an AudioSource attached to this GameObject that will play the music.
     public AudioSource musicSource;
 
+    public NewSpawner spawner;
+
+    bool hasSpawned = false;
+    float timeSinceLastSpawn;
+
     void Start()
     {
         //Load the AudioSource attached to the Conductor GameObject
-        musicSource = GetComponent<AudioSource>();
         musicSource = GetComponent<AudioSource>();
         if (musicSource == null)
         {
@@ -35,10 +39,11 @@ public class RhythmConductor : MonoBehaviour
         }
 
         //Calculate the number of seconds in each beat
-        secPerBeat = 60f / songBpm;
+        secPerBeat = songBpm/ 60f;
 
         //Record the time when the music starts
         dspSongTime = (float)AudioSettings.dspTime;
+        
 
         //Start the music
         musicSource.Play();
@@ -46,10 +51,33 @@ public class RhythmConductor : MonoBehaviour
 
     void Update()
     {
-        //determine how many seconds since the song started
-        songPosition = (float)(AudioSettings.dspTime - dspSongTime);
+       // Debug.Log("Update method called");
+        UpdateSpawningLogic();
+    }
 
-        //determine how many beats since the song started
+    public void UpdateSpawningLogic()
+    {
+       // Debug.Log("UpdateSpawningLogic method called");
+        songPosition = (float)(AudioSettings.dspTime - dspSongTime);
         songPositionInBeats = songPosition / secPerBeat;
+        // Debug.Log("Current Song Position in beats: " + songPositionInBeats/secPerBeat);
+
+        // Check if it's time to spawn a new enemy
+        if ((((int)songPosition / (int)secPerBeat) % 2 == 0) && !hasSpawned && timeSinceLastSpawn >= secPerBeat)
+        {
+            spawner.SpawnEnemyPair();
+            hasSpawned = true;  // Set the flag to indicate that spawning has occurred
+            timeSinceLastSpawn = 0f;  // Reset the timer
+            Debug.Log("Spawned Enemy Pair at Beat: " + songPositionInBeats);
+        }
+
+        // Update the timer
+        timeSinceLastSpawn += Time.deltaTime;
+
+        // Check if the time since last spawn exceeds secPerBeat
+        if (hasSpawned && timeSinceLastSpawn >= secPerBeat)
+        {
+            hasSpawned = false;  // Reset the flag for the next spawn cycle
+        }
     }
 }
